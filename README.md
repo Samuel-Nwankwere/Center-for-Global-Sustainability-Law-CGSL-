@@ -24,7 +24,7 @@ The layout and components reproduce the **Ecofine – Ecology & Environment** Th
 | Footer 1 | `components/layout/SiteFooter.tsx` |
 | Theme button (double-chevron, colour sweep on hover) | `components/ui/primitives.tsx` → `buttonClass` |
 
-Ecofine tokens and their CGSL equivalents are documented at the top of `src/styles/index.css`. The font is Manrope, as in Ecofine. No Ecofine demo photos are used; all images are CGSL's own.
+Ecofine tokens and their CGSL equivalents are documented at the top of `src/styles/index.css`. The font is Noto Serif (Google Fonts), self-hosted. No Ecofine demo photos are used; all images are CGSL's own.
 
 ## Quick start
 
@@ -45,7 +45,7 @@ npm run lint && npm run typecheck && npm test
 | Routing | React Router 6 | Each page is its own lazy-loaded chunk |
 | Styling | Tailwind CSS 3 + CSS-variable design tokens | One place to change brand colours (`src/styles/index.css`) |
 | Icons | lucide-react | Consistent, tree-shaken SVG icons |
-| Fonts | Manrope, self-hosted via @fontsource | Ecofine's typeface; no third-party font requests |
+| Fonts | Noto Serif (Google Fonts), self-hosted via @fontsource | CGSL's typeface; no third-party font requests |
 | Quality | ESLint, `tsc --strict`, Vitest | Tests cover content integrity (no broken internal links, unique slugs, no lorem ipsum) and search |
 
 ## Project structure
@@ -68,15 +68,32 @@ src/
     sections/         ← reusable page sections (feature grid, CTA band, enquiry form)
   pages/              ← one file per route
 scripts/import-wordpress.py   ← re-runnable importer from the WordPress REST API
-public/media/                 ← optimised WebP images (77 files, ~4.5 MB vs. multi-MB originals)
+public/media/                 ← optimised WebP images
+src/assets/series/            ← publication series PDFs (intro.pdf, issue-N.pdf) and their covers
+scripts/series-covers.py      ← renders series covers from each PDF's first page
 ```
 
 ## Common editing tasks
 
 - **Add a publication**: add an entry to `src/content/generated/articles.json` (or hook up a CMS; see below). It then appears automatically in listings, search, author pages and related-topic links.
 - **Add a team member**: add to `people.json`. A profile page at `/people/<slug>` is generated automatically.
+- **Remove a team member**: set `"former": true` in `people.json`. They leave every team listing and search, but their profile stays so their publication credits still link to it.
 - **Change navigation**: edit `mainNav` in `src/content/site.ts`.
 - **Re-theme**: edit the `--brand-*` and `--ink-*` variables in `src/styles/index.css`.
+
+## Publication series (PDF carousels)
+
+The **Series** page (`/series`) shows CGSL's LinkedIn-style PDF carousels, one section per series. The Paris Agreement Series is also featured on the homepage (hero slide 4 and the section under the hero, which appears once at least one issue exists).
+
+**Add an issue**
+
+1. Save the PDF as `src/assets/series/paris-agreement/issue-N.pdf` (lowercase, N = issue number, e.g. `issue-1.pdf`). A series introduction goes in the same folder as `intro.pdf`; it is shown first, labelled "Introduction".
+2. Run `npm run series:covers`. This renders each new PDF's first page to `issue-N.webp`, the cover shown in the gallery. It needs `pdftoppm` (poppler-utils) and Pillow. Without a cover the card still works, but it renders page 1 from the PDF when it scrolls into view.
+3. Add the issue's title, exactly as it appears on the publication, to `issueTitles` in `src/content/series.ts`.
+
+**Add a series**: add an entry to `publicationSeries` in `src/content/series.ts` (slug, title, description) and put its PDFs in `src/assets/series/<slug>/`.
+
+**How it loads**: the gallery shows only the WebP covers. pdf.js (`pdfjs-dist`, its own lazily loaded chunk) and the PDF itself are only fetched when a visitor pages through or opens an issue. On hosts that send `Accept-Ranges: bytes` (Netlify, Vercel, Cloudflare Pages, nginx, Apache), pdf.js fetches just the pages being viewed rather than the whole file. Canva PDFs can be large (10–25 MB), so export them with **Compress file** ticked where possible.
 
 ## Forms
 
@@ -140,6 +157,7 @@ Added for the Ecofine layout:
 - Home FAQ questions and answers (`homeFaqs` in `src/content/pages.ts`). The answers are drawn from existing site text.
 - About block checklist ("Independent, non-profit and apolitical", …).
 - Hero slide 3 and the "Year founded 2025" badge.
+- Series: the Paris Agreement Series description and hero slide 4 text (taken from the opening publication's own introduction), and the one-line intro on the Series page.
 
 From the first version:
 

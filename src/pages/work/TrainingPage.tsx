@@ -13,7 +13,7 @@ export default function TrainingPage() {
   useSeo('Training', training.intro[0]);
   return (
     <>
-      <PageHero eyebrow="What we do" title="Training & capacity building" image={images.training} crumbs={[{ label: 'What We Do' }, { label: 'Training' }]} intro="Equipping policymakers, legal practitioners and executives to navigate the evolving Lex Commons." />
+      <PageHero eyebrow="What we do" title="Training & Capacity Building" image={images.training} crumbs={[{ label: 'What We Do' }, { label: 'Training' }]} intro="Equipping policymakers, legal practitioners and executives to navigate the evolving Lex Commons." />
 
       <Section>
         <Container className="grid items-center gap-12 lg:grid-cols-2">
@@ -48,7 +48,7 @@ export default function TrainingPage() {
       </Section>
 
       <CtaBand
-        title="Plan a training programme with CGSL"
+        title="Plan a Training Programme with CGSL"
         text="Tell us about your team and objectives, and we’ll design a learning pathway around them."
         actions={
           <>

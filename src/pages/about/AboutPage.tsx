@@ -1,6 +1,6 @@
 import { Compass, Target } from 'lucide-react';
 import { overview } from '@/content/pages';
-import { images, people } from '@/lib/content';
+import { currentPeople, images } from '@/lib/content';
 import { asset } from '@/lib/utils';
 import { useSeo } from '@/lib/hooks';
 import { PageHero } from '@/components/ui/PageHero';
@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   useSeo('About Us', overview.intro);
-  const leaders = people.filter((p) => p.group === 'executive').slice(0, 4);
+  const leaders = currentPeople.filter((p) => p.group === 'executive').slice(0, 4);
   return (
     <>
-      <PageHero eyebrow="About CGSL" title="Who we are" image={images.overview} crumbs={[{ label: 'About' }]} intro={overview.intro} size="lg" />
+      <PageHero eyebrow="About CGSL" title="Who We Are" image={images.overview} crumbs={[{ label: 'About' }]} intro={overview.intro} size="lg" />
 
       <Section>
         <Container className="grid gap-6 md:grid-cols-2">
@@ -38,7 +38,7 @@ export default function AboutPage() {
         <Container className="grid items-start gap-12 lg:grid-cols-12">
           <div className="lg:sticky lg:top-28 lg:col-span-5">
             <p className="eyebrow">Our approach</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Law is the vehicle that gets society to a sustainable destination</h2>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Law Is the Vehicle That Gets Society to a Sustainable Destination</h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-600">{overview.approachLead}</p>
             <img src={asset(images.home)} alt="" loading="lazy" className="mt-8 hidden aspect-[4/3] w-full rounded-eco object-cover lg:block" />
           </div>

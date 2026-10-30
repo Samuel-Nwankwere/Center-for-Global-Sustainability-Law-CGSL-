@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Mail } from 'lucide-react';
-import { articles, getPerson, people, personForAuthor } from '@/lib/content';
+import { articles, currentPeople, getPerson, personForAuthor } from '@/lib/content';
 import { useSeo } from '@/lib/hooks';
 import { PageHero } from '@/components/ui/PageHero';
 import { Badge, ButtonA, ButtonLink, Container, Section, SectionHeading } from '@/components/ui/primitives';
@@ -17,7 +17,7 @@ export default function PersonPage() {
 
   const authored = articles.filter((a) => a.authors.some((name) => personForAuthor(name)?.slug === person.slug));
   const teamPath = person.group === 'intern' ? '/people?team=intern' : '/people';
-  const colleagues = people.filter((p) => p.group === person.group && p.slug !== person.slug).slice(0, 4);
+  const colleagues = currentPeople.filter((p) => p.group === person.group && p.slug !== person.slug).slice(0, 4);
 
   return (
     <>

@@ -37,7 +37,7 @@ export default function DomainsPage() {
     <>
       <PageHero
         eyebrow="What we do"
-        title="Sustainability domains"
+        title="Sustainability Domains"
         image={images.domains}
         crumbs={[{ label: 'What We Do' }, { label: 'Sustainability Domains' }]}
         intro={`${domains.length} interconnected areas where CGSL maps existing law, identifies gaps, and designs the legal frameworks needed for a sustainable transition.`}

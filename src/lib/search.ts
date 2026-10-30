@@ -1,4 +1,4 @@
-import { articles, articlePath, domains, people, programs, seriesLabel } from './content';
+import { articles, articlePath, currentPeople, domains, programs, seriesLabel } from './content';
 import { mainNav } from '@/content/site';
 
 export interface SearchItem {
@@ -24,7 +24,7 @@ export const searchIndex: SearchItem[] = [
     meta: seriesLabel[a.series],
     text: `${a.subtitle ?? ''} ${a.authors.join(' ')} ${a.excerpt}`,
   })),
-  ...people.map((p) => ({ title: p.name, to: `/people/${p.slug}`, kind: 'Person' as const, meta: p.role, text: p.role })),
+  ...currentPeople.map((p) => ({ title: p.name, to: `/people/${p.slug}`, kind: 'Person' as const, meta: p.role, text: p.role })),
 ];
 
 const normalize = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');

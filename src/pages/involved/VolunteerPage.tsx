@@ -11,13 +11,13 @@ export default function VolunteerPage() {
   useSeo('Volunteer with Us', volunteer.intro);
   return (
     <>
-      <PageHero eyebrow="Get involved" title="Join our team" image={images.volunteer} crumbs={[{ label: 'Get Involved' }, { label: 'Volunteer with Us' }]} intro="Called to make a difference? Let’s go." />
+      <PageHero eyebrow="Get involved" title="Join Our Team" image={images.volunteer} crumbs={[{ label: 'Get Involved' }, { label: 'Volunteer with Us' }]} intro="Called to make a difference? Let’s go." />
 
       <Section>
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="eyebrow">CGSL volunteer program</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Lend your skills to a global mission</h2>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Lend Your Skills to a Global Mission</h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-600">{volunteer.intro}</p>
           </div>
           <div className="grid grid-cols-2 gap-4">

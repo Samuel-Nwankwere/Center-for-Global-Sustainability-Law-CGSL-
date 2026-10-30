@@ -75,17 +75,17 @@ export const history = {
     },
     {
       period: 'First six months',
-      title: 'The Emergence phase',
+      title: 'The Emergence Phase',
       text: 'A period of intense discovery. We moved beyond theory to establish our foundation — not just studying the gaps in the global sustainability landscape, but building the tools to close them.',
     },
     {
       period: 'The pivot',
-      title: 'From thought leadership to infrastructure',
+      title: 'From Thought Leadership to Infrastructure',
       text: 'The world does not need more “opinions” on sustainability; it needs legal and enforceable certainty. We are evolving into a Legal Infrastructure Provider (LIP) for global sustainability.',
     },
     {
       period: 'Now',
-      title: 'The Propulsive phase',
+      title: 'The Propulsive Phase',
       text: 'Our second phase is defined by high-velocity impact, built upon five strategic pillars.',
     },
   ],
@@ -169,6 +169,8 @@ export interface ResourcePageContent {
   listTitle: string;
   list: string[];
   closing?: string;
+  /** Internal route the closing line links to. */
+  closingLink?: string;
   contactLine: string;
   imageKey: string;
 }
@@ -178,7 +180,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
     key: 'caseStudies',
     eyebrow: 'Publications',
     title: 'Case Studies',
-    heading: 'Real-world insights at the intersection of law and sustainability',
+    heading: 'Real-World Insights at the Intersection of Law and Sustainability',
     intro: [
       'At CGSL, we believe in the power of practical application. Our Case Studies explore how legal frameworks, policy innovations, and governance models are being applied in real-world contexts to address urgent sustainability challenges.',
       'Each case study offers a deep dive into specific issues — ranging from climate litigation and energy transitions to biodiversity conservation and corporate accountability — providing valuable lessons, replicable models, and critical reflections for practitioners, policymakers, and scholars.',
@@ -191,6 +193,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
       'Spark new ideas for policy design, implementation, and reform',
     ],
     closing: 'Explore how legal strategies are shaping more equitable, sustainable futures — one case at a time.',
+    closingLink: '/domains',
     contactLine: 'Interested in contributing a case study or learning more?',
     imageKey: 'caseStudies',
   },
@@ -198,7 +201,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
     key: 'whitePapers',
     eyebrow: 'Publications',
     title: 'White Papers',
-    heading: 'Thought leadership on law and sustainability',
+    heading: 'Thought Leadership on Law and Sustainability',
     intro: [
       'Our White Papers provide in-depth analysis and policy-oriented insights on critical issues at the convergence of law, governance, and sustainability. Authored by CGSL researchers, collaborators, and subject-matter experts, these papers are designed to inform decision-makers, influence legal reforms, and spark scholarly and public discourse.',
       'Each publication delves into a specific topic — ranging from environmental regulations and just transition frameworks to sustainable finance and legal innovation — offering clear, actionable recommendations grounded in rigorous research.',
@@ -218,7 +221,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
     key: 'proposals',
     eyebrow: 'Publications',
     title: 'Proposals',
-    heading: 'Shaping the future of sustainability through law',
+    heading: 'Shaping the Future of Sustainability through Law',
     intro: [
       'At CGSL, we develop and share proposals that aim to influence legal reforms, inspire collaborative action, and support the development of sustainability-focused frameworks. These proposals are grounded in research, stakeholder engagement, and strategic foresight, addressing both current gaps and future challenges.',
       'Each proposal is carefully structured to include a clear problem definition, legal and policy context, practical solutions, and implementation pathways. Many are developed in partnership with stakeholders, ensuring relevance and impact.',
@@ -238,7 +241,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
     key: 'annualReports',
     eyebrow: 'About',
     title: 'Annual Reports',
-    heading: 'Our year in review',
+    heading: 'Our Year in Review',
     intro: [
       'Each year, the Center for Global Sustainability Law publishes a comprehensive Annual Report to highlight our achievements, reflect on lessons learned, and showcase the progress made in advancing law and sustainability.',
       'Our reports provide an in-depth look at the programs we’ve delivered, partnerships we’ve forged, research we’ve produced, and the impact we’ve created across regions and sectors.',
@@ -278,7 +281,7 @@ export const resourcePages: Record<string, ResourcePageContent> = {
     key: 'sustainability',
     eyebrow: 'About',
     title: 'Sustainability at CGSL',
-    heading: 'Sustainability is not just our subject — it is our identity',
+    heading: 'Sustainability Is Not Just Our Subject — It Is Our Identity',
     intro: [
       'At CGSL, sustainability is not just a subject of research — it is our guiding principle. We embed sustainability into every aspect of our work, from our internal operations to the programs and legal initiatives we advance globally.',
       'Our commitment spans the environmental, social, economic, and legal dimensions of sustainability, ensuring that our impact is meaningful, inclusive, and forward-looking.',

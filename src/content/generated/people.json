@@ -1,11 +1,11 @@
 [
  {
   "name": "Akinola Afolarin",
-  "role": "President & CEO",
+  "role": "Founder & CEO",
   "group": "executive",
   "email": "aafolarin@cgsul.org",
   "bio": [
-   "Akinola Afolarin is the President & CEO of the Center for Global Sustainability Law (CGSL), where he leads the Center’s global mission to accelerate a just and sustainable transition through law, governance, and policy innovation. His leadership is reflected in CGSL’s commitment to addressing complex environmental and socio‑economic challenges by strengthening the legal and institutional architectures that underpin global sustainability.",
+   "Akinola Afolarin is the Founder & CEO of the Center for Global Sustainability Law (CGSL), where he leads the Center’s global mission to accelerate a just and sustainable transition through law, governance, and policy innovation. His leadership is reflected in CGSL’s commitment to addressing complex environmental and socio‑economic challenges by strengthening the legal and institutional architectures that underpin global sustainability.",
    "Akinola began his legal career more than a decade ago in Nigeria, representing private, corporate, and governmental clients across diverse sectors of the economy. Today, he is recognized as a leading voice in corporate and environmental sustainability law, with core expertise in climate change, corporate sustainability strategy and governance, energy transition, sustainable finance in emerging markets, and the role of the private sector in advancing global climate action.",
    "He is also a Fellow of the Institute for Energy Democracy at the Pace Energy & Climate Center (Pace University), where he contributes significant expertise on energy and climate‑related legal and regulatory issues. His prior experience includes serving as an ESG Specialist at ServiceNow and as Vice Chair of the American Bar Association’s Section on Environment, Energy, and Resources Law (IERL Committee). Akinola is a frequent speaker at conferences and webinars, and his research spans multiple dimensions of corporate and environmental sustainability law.",
    "He earned his LL.B. from Olabisi Onabanjo University and his B.L. from the Nigerian Law School, before pursuing graduate studies at the Elisabeth Haub School of Law at Pace University and the Columbia Climate School/Columbia School of Professional Studies, where he deepened his expertise in international environmental law and sustainability management. He is also a Doctor of Judicial Science (S.J.D.) researcher, examining the structural imbalances embedded within existing climate‑finance frameworks and the legal and equity challenges they create - particularly for countries across sub‑Saharan Africa.",
@@ -14,21 +14,6 @@
   "slug": "akinola-afolarin",
   "board": true,
   "photo": "/media/akinola-headshot-5-fb42a2.webp"
- },
- {
-  "name": "Dr. Pianpian Wang",
-  "role": "Chief Operating Officer",
-  "group": "executive",
-  "email": "pwang@cgsul.org",
-  "bio": [
-   "Pianpian is the Chief Operating Officer (COO) at CGSL, overseeing the Center’s operations and the implementation of its strategies towards ensuring efficiency in the actualization of the Center’s vision.",
-   "With over thirteen years of experience in environmental law and climate policy, Pianpian Wang brings a distinctive blend of academic rigor and private-sector insight to every engagement. Her expertise spans carbon markets, renewable energy, and corporate sustainability, with a proven track record of helping organizations translate ambitious sustainability goals into actionable strategies.",
-   "Pianpian has advised clients across diverse industries—from agile start-ups to global Fortune 500 companies—delivering practical solutions that align with evolving regulations and stakeholder expectations. She believes that business, when guided by responsibility and purpose, can be a powerful catalyst for effective environmental and social governance.",
-   "She holds both a Doctor of Juridical Science (S.J.D.) and an LL.M. in Environmental Law and Climate Policy from the Elisabeth Haub School of Law at Pace University, as well as a master’s degree in law from Sun Yat-sen University in China. She is also a certified lawyer in China and a member of the IUCN World Commission on Environmental Law."
-  ],
-  "slug": "pianpian-wang",
-  "board": false,
-  "photo": "/media/pianpian-wang-headshot-2-4-6b67fc.webp"
  },
  {
   "name": "Maria C. Francois",
@@ -58,7 +43,8 @@
   ],
   "slug": "priscilla-oche",
   "board": false,
-  "photo": "/media/priscilla-oche-3-583f81.webp"
+  "photo": "/media/priscilla-oche-3-583f81.webp",
+  "former": true
  },
  {
   "name": "Abigail Ford",
@@ -86,7 +72,8 @@
   ],
   "slug": "jamil-fofanah",
   "board": false,
-  "photo": "/media/jamil-4-6d9eee.webp"
+  "photo": "/media/jamil-4-6d9eee.webp",
+  "former": true
  },
  {
   "name": "Shaune Hickson",
@@ -101,7 +88,8 @@
   ],
   "slug": "shaune-hickson",
   "board": false,
-  "photo": "/media/shickon-4-62e0b1.webp"
+  "photo": "/media/shickon-4-62e0b1.webp",
+  "former": true
  },
  {
   "name": "Carolina Borges Menezes",
@@ -113,7 +101,8 @@
   ],
   "slug": "carolina-borges-menezes",
   "board": false,
-  "photo": "/media/carolina-2-5ee017.webp"
+  "photo": "/media/carolina-2-5ee017.webp",
+  "former": true
  },
  {
   "name": "Garrison Jagoe",
@@ -125,7 +114,8 @@
   ],
   "slug": "garrison-jagoe",
   "board": false,
-  "photo": "/media/garrison-cgsl-pic-4-969965.webp"
+  "photo": "/media/garrison-cgsl-pic-4-969965.webp",
+  "former": true
  },
  {
   "name": "Tolani Olawore",
@@ -153,7 +143,8 @@
   ],
   "slug": "sophie-price",
   "board": false,
-  "photo": "/media/sophie-price-3-e53e31.webp"
+  "photo": "/media/sophie-price-3-e53e31.webp",
+  "former": true
  },
  {
   "name": "Ategha Bens",
@@ -167,7 +158,8 @@
   ],
   "slug": "ategha-bens",
   "board": false,
-  "photo": "/media/ategha-bens-4-3c99c4.webp"
+  "photo": "/media/ategha-bens-4-3c99c4.webp",
+  "former": true
  },
  {
   "name": "Caleb Akintola",
@@ -207,7 +199,8 @@
   ],
   "slug": "marvellous-omotosho",
   "board": false,
-  "photo": "/media/marvellous-omotosho-4-8fa09a.webp"
+  "photo": "/media/marvellous-omotosho-4-8fa09a.webp",
+  "former": true
  },
  {
   "name": "MD Mahamodul Hasan",
@@ -235,7 +228,8 @@
   ],
   "slug": "prisca-opara",
   "board": false,
-  "photo": "/media/prisca-opara-1-4-a17f50.webp"
+  "photo": "/media/prisca-opara-1-4-a17f50.webp",
+  "former": true
  },
  {
   "name": "Nwankwere Samuel",
@@ -263,7 +257,8 @@
   ],
   "slug": "samuel-abdulkareem",
   "board": false,
-  "photo": "/media/samuel-abdulkareem-5-281490.webp"
+  "photo": "/media/samuel-abdulkareem-5-281490.webp",
+  "former": true
  },
  {
   "name": "Violet Gagliano",
@@ -276,6 +271,7 @@
   ],
   "slug": "violet-gagliano",
   "board": false,
-  "photo": "/media/new-intern-aac5ee.webp"
+  "photo": "/media/new-intern-aac5ee.webp",
+  "former": true
  }
 ]

@@ -18,7 +18,7 @@ export default function AdvisoryPage() {
   useSeo('Advisory Services', advisory.intro[0]);
   return (
     <>
-      <PageHero eyebrow="Advisory" title="Advisory services" image={images.advisory} crumbs={[{ label: 'Advisory Services' }]} intro="A strategic roadmap through the legal complexity of the sustainability transition — for governments, corporations and international organisations.">
+      <PageHero eyebrow="Advisory" title="Advisory Services" image={images.advisory} crumbs={[{ label: 'Advisory Services' }]} intro="A strategic roadmap through the legal complexity of the sustainability transition — for governments, corporations and international organisations.">
         <div className="flex flex-wrap gap-3">
           <ButtonLink to="/contact" variant="light" arrow>
             Talk to our team
@@ -46,7 +46,7 @@ export default function AdvisoryPage() {
       <section className="bg-brand-800 py-20 text-white">
         <Container>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">How an engagement works</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-3xl font-extrabold text-white sm:text-4xl">Long-term partners, not just counsel</h2>
+          <h2 className="mt-4 max-w-2xl font-serif text-3xl font-extrabold text-white sm:text-4xl">Long-Term Partners, Not Just Counsel</h2>
           <ol className="mt-12 grid gap-px overflow-hidden rounded-eco bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
               <li key={s.title} className="bg-brand-800 p-7">
@@ -60,7 +60,7 @@ export default function AdvisoryPage() {
       </section>
 
       <CtaBand
-        title="Ready to future-proof your sustainability strategy?"
+        title="Ready to Future-Proof Your Sustainability Strategy?"
         actions={
           <>
             <ButtonLink to="/contact" variant="light" arrow>

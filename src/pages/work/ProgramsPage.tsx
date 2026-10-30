@@ -10,7 +10,7 @@ export default function ProgramsPage() {
   useSeo('Programs & Initiatives', programsIntro);
   return (
     <>
-      <PageHero eyebrow="What we do" title="Programs & initiatives" image={images.programs} crumbs={[{ label: 'Programs' }]} intro="Flagship research programmes where CGSL builds the legal foundations for a fair and sustainable economy." />
+      <PageHero eyebrow="What we do" title="Programs and Initiatives" image={images.programs} crumbs={[{ label: 'Programs' }]} intro="Flagship research programmes where CGSL builds the legal foundations for a fair and sustainable economy." />
       <Section>
         <Container>
           <p className="max-w-4xl font-serif text-xl leading-relaxed text-ink-800 sm:text-2xl">{programsIntro}</p>
@@ -24,7 +24,7 @@ export default function ProgramsPage() {
         </Container>
       </Section>
       <CtaBand
-        title="Sponsor or collaborate on a program"
+        title="Sponsor or Collaborate on a Program"
         text="Support flagship programs such as Net Zero Law, Just Transition and Legal Innovation, or join our joint research initiatives."
         actions={
           <>

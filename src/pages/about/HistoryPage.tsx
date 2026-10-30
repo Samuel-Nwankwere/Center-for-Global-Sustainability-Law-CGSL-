@@ -1,6 +1,7 @@
 import { Flag, Quote } from 'lucide-react';
 import { history } from '@/content/pages';
 import { images } from '@/lib/content';
+import { asset } from '@/lib/utils';
 import { useSeo } from '@/lib/hooks';
 import { PageHero } from '@/components/ui/PageHero';
 import { ButtonLink, Container, Reveal, Section, SectionHeading } from '@/components/ui/primitives';
@@ -9,13 +10,17 @@ export default function HistoryPage() {
   useSeo('Our History', history.intro);
   return (
     <>
-      <PageHero eyebrow="About CGSL" title="Our history" image={images.history} crumbs={[{ label: 'About', to: '/about' }, { label: 'Our History' }]} intro="Rooted in passion, resilience, and an unwavering dedication to a cause that secures our world." />
+      <PageHero eyebrow="About CGSL" title="Our History" image={images.history} crumbs={[{ label: 'About', to: '/about' }, { label: 'Our History' }]} intro="Rooted in passion, resilience, and an unwavering dedication to a cause that secures our world." />
 
       <Section>
-        <Container className="max-w-prose">
+        <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <p className="font-serif text-2xl leading-relaxed text-ink-800 first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:font-extrabold first-letter:leading-[0.85] first-letter:text-brand-600">
             {history.intro}
           </p>
+          <Reveal className="relative mx-auto w-full max-w-[34rem] pb-6 pl-6">
+            <span className="absolute bottom-0 left-0 top-10 w-3 bg-brand-600" aria-hidden />
+            <img src={asset(images.historyAside)} alt="" loading="lazy" className="relative aspect-[5/4] w-full rounded-eco object-cover" />
+          </Reveal>
         </Container>
       </Section>
 
@@ -72,7 +77,7 @@ export default function HistoryPage() {
       <Section>
         <Container className="max-w-3xl text-center">
           <p className="eyebrow">The road ahead</p>
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Building momentum</h2>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Building Momentum</h2>
           <p className="mt-6 text-lg leading-relaxed text-ink-600">{history.roadAhead}</p>
           <p className="mt-6 font-serif text-xl text-brand-800">{history.callToAction}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">

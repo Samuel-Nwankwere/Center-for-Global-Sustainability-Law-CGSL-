@@ -26,8 +26,6 @@ export const mainNav: NavItem[] = [
       { label: 'Overview', to: '/about', description: 'Who we are, our vision, mission and values' },
       { label: 'Our History', to: '/about/history', description: 'From Emergence to our Propulsive phase' },
       { label: 'Sustainability at CGSL', to: '/about/sustainability-at-cgsl', description: 'How we live our principles' },
-      { label: 'Annual Reports', to: '/about/annual-reports', description: 'Our year in review' },
-      { label: 'Financials', to: '/about/financials', description: 'Transparency and accountability' },
     ],
   },
   {
@@ -49,10 +47,9 @@ export const mainNav: NavItem[] = [
       { label: 'LeGsus Trove', to: '/publications/trove', description: 'Briefings on legal developments' },
       { label: 'LeGsus Review', to: '/publications/review', description: 'Legal frameworks by subject' },
       { label: 'Case Studies', to: '/publications/case-studies', description: 'Law applied in the real world' },
-      { label: 'White Papers', to: '/publications/white-papers', description: 'Policy-oriented thought leadership' },
-      { label: 'Proposals', to: '/publications/proposals', description: 'Informed proposals for legal reform' },
     ],
   },
+  { label: 'Series', to: '/series' },
   { label: 'People', to: '/people' },
   {
     label: 'Get Involved',

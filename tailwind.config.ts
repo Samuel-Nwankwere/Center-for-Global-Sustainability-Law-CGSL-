@@ -21,10 +21,10 @@ export default {
         ink: scale('ink'),
       },
       fontFamily: {
-        // Ecofine uses Manrope for everything; `serif` is kept as an alias so
-        // existing heading classes resolve to the theme's display face.
-        sans: ['"Manrope Variable"', 'Manrope', 'system-ui', 'sans-serif'],
-        serif: ['"Manrope Variable"', 'Manrope', 'system-ui', 'sans-serif'],
+        // CGSL uses Noto Serif for everything; `serif` is kept as an alias so
+        // existing heading classes resolve to the same face.
+        sans: ['"Noto Serif Variable"', '"Noto Serif"', 'Georgia', 'serif'],
+        serif: ['"Noto Serif Variable"', '"Noto Serif"', 'Georgia', 'serif'],
       },
       // Tailwind's default type scale reduced ~10% site-wide.
       fontSize: {

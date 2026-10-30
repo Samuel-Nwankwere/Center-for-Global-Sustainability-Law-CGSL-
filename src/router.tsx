@@ -19,6 +19,7 @@ const PublicationsPage = lazy(() => import('@/pages/publications/PublicationsPag
 const SeriesPage = lazy(() => import('@/pages/publications/SeriesPage'));
 const ArticlePage = lazy(() => import('@/pages/publications/ArticlePage'));
 const ReviewPage = lazy(() => import('@/pages/publications/ReviewPage'));
+const SeriesIndexPage = lazy(() => import('@/pages/series/SeriesIndexPage'));
 const PeoplePage = lazy(() => import('@/pages/people/PeoplePage'));
 const PersonPage = lazy(() => import('@/pages/people/PersonPage'));
 const VolunteerPage = lazy(() => import('@/pages/involved/VolunteerPage'));
@@ -52,6 +53,7 @@ export const routes: RouteObject[] = [
       { path: 'publications/case-studies', element: <ResourcePage pageKey="caseStudies" /> },
       { path: 'publications/white-papers', element: <ResourcePage pageKey="whitePapers" /> },
       { path: 'publications/proposals', element: <ResourcePage pageKey="proposals" /> },
+      { path: 'series', element: <SeriesIndexPage /> },
       { path: 'people', element: <PeoplePage /> },
       { path: 'people/:slug', element: <PersonPage /> },
       { path: 'get-involved/volunteer', element: <VolunteerPage /> },

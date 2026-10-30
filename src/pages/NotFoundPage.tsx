@@ -11,7 +11,7 @@ export default function NotFoundPage() {
       <section className="py-20 lg:py-[110px]">
         <Container className="max-w-2xl text-center">
           <p className="text-[108px] font-extrabold leading-none text-brand-600 sm:text-[162px]">404</p>
-          <h2 className="mt-4 text-3xl font-extrabold">Oops! That page can’t be found</h2>
+          <h2 className="mt-4 text-3xl font-extrabold">Oops! That Page Can’t Be Found</h2>
           <p className="mt-4">The page may have moved as part of our new website. Use search, or head back to the homepage.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <ButtonLink to="/" arrow>

@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { images, people } from '@/lib/content';
+import { currentPeople, images } from '@/lib/content';
 import { cn } from '@/lib/utils';
 import { useSeo } from '@/lib/hooks';
 import { PageHero } from '@/components/ui/PageHero';
@@ -32,11 +32,11 @@ export default function PeoplePage() {
   const [params, setParams] = useSearchParams();
   const team = (teams.find((t) => t.key === params.get('team'))?.key ?? 'executive') as TeamKey;
   const current = teams.find((t) => t.key === team)!;
-  const members = people.filter((p) => (team === 'board' ? p.board : p.group === team));
+  const members = currentPeople.filter((p) => (team === 'board' ? p.board : p.group === team));
 
   return (
     <>
-      <PageHero eyebrow="People" title="Our people" image={images.overview} crumbs={[{ label: 'People' }]} intro="A global network of lawyers, policy specialists and researchers working across Africa, the Americas, Europe and Asia." />
+      <PageHero eyebrow="People" title="Our People" image={images.overview} crumbs={[{ label: 'People' }]} intro="A global network of lawyers, policy specialists and researchers working across Africa, the Americas, Europe and Asia." />
       <Section>
         <Container>
           <div className="flex flex-col gap-8">
@@ -58,7 +58,7 @@ export default function PeoplePage() {
                   )}
                 >
                   {t.label}
-                  <span className="ml-1.5 text-xs text-ink-400">{people.filter((p) => (t.key === 'board' ? p.board : p.group === t.key)).length}</span>
+                  <span className="ml-1.5 text-xs text-ink-400">{currentPeople.filter((p) => (t.key === 'board' ? p.board : p.group === t.key)).length}</span>
                 </button>
               ))}
             </div>
@@ -71,7 +71,7 @@ export default function PeoplePage() {
         </Container>
       </Section>
       <CtaBand
-        title="Join a global community of changemakers"
+        title="Join a Global Community of Changemakers"
         text="We welcome volunteers, interns and collaborators who share our commitment to a just and sustainable transition."
         actions={
           <>

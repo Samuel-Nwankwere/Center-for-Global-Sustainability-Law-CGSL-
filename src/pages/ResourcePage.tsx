@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CheckCircle2, Mail } from 'lucide-react';
 import { resourcePages } from '@/content/pages';
 import { site } from '@/content/site';
@@ -28,7 +29,17 @@ export default function ResourcePage({ pageKey }: { pageKey: string }) {
                 <p key={p.slice(0, 20)}>{p}</p>
               ))}
             </div>
-            {page.closing && <p className="mt-8 border-l-4 border-brand-500 pl-5 font-serif text-xl text-ink-800">{page.closing}</p>}
+            {page.closing && (
+              <p className="mt-8 border-l-4 border-brand-500 pl-5 font-serif text-xl text-ink-800">
+                {page.closingLink ? (
+                  <Link to={page.closingLink} className="underline decoration-brand-300 underline-offset-4 transition hover:text-brand-600 hover:decoration-brand-600">
+                    {page.closing}
+                  </Link>
+                ) : (
+                  page.closing
+                )}
+              </p>
+            )}
           </div>
           <aside className="lg:col-span-5">
             <div className="rounded-eco bg-ink-50 p-8 ring-1 ring-ink-200/70">

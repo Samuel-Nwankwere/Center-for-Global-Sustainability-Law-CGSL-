@@ -27,12 +27,12 @@ export default function DonatePage() {
 
   return (
     <>
-      <PageHero eyebrow="Get involved" title="Give to support our work" image={images.donate} crumbs={[{ label: 'Get Involved' }, { label: 'Donate' }]} intro={donate.intro} />
+      <PageHero eyebrow="Get involved" title="Give to Support Our Work" image={images.donate} crumbs={[{ label: 'Get Involved' }, { label: 'Donate' }]} intro={donate.intro} />
 
       <Section>
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">Your gift builds the legal foundation of sustainability</h2>
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">Your Gift Builds the Legal Foundation of Sustainability</h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-600">
               Every gift, whether one-time or recurring, directly sustains our mission and expands our global impact.
             </p>
@@ -57,7 +57,7 @@ export default function DonatePage() {
                 </FormSuccess>
               ) : (
                 <>
-                  <h2 className="text-2xl font-semibold">Make a gift</h2>
+                  <h2 className="text-2xl font-semibold">Make a Gift</h2>
                   <div className="mt-6 grid grid-cols-2 rounded-[5px] bg-ink-50 p-1 ring-1 ring-ink-200" role="radiogroup" aria-label="Frequency">
                     {(['One-time', 'Monthly'] as const).map((f) => (
                       <button

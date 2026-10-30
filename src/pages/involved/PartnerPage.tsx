@@ -10,7 +10,7 @@ export default function PartnerPage() {
   useSeo('Engagements & Collaborations', partner.intro);
   return (
     <>
-      <PageHero eyebrow="Get involved" title="Engagements & collaborations" image={images.partner} crumbs={[{ label: 'Get Involved' }, { label: 'Engagements & Collaborations' }]} intro="The power of partnerships to drive meaningful change." />
+      <PageHero eyebrow="Get involved" title="Engagements & Collaborations" image={images.partner} crumbs={[{ label: 'Get Involved' }, { label: 'Engagements & Collaborations' }]} intro="The power of partnerships to drive meaningful change." />
 
       <Section>
         <Container className="max-w-4xl text-center">

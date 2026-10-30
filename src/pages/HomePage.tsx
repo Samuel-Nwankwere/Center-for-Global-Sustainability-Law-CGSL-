@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, BookOpenText, ChevronLeft, ChevronRight, CircleCheck, Layers, Quote, Scale, Users } from 'lucide-react';
 import { site } from '@/content/site';
 import { history, homeFaqs, lexCommons, overview } from '@/content/pages';
-import { articles, articlesBySeries, domains, featuredDomains, getArticle, images, people, programs } from '@/lib/content';
+import { articles, articlesBySeries, currentPeople, domains, featuredDomains, getArticle, getSeries, images, programs, seriesIssues } from '@/lib/content';
 import { asset, cn } from '@/lib/utils';
 import { useCountUp, useInView, useSeo } from '@/lib/hooks';
 import { ButtonLink, Container, LeafSprig, Reveal, Section, SectionHeading } from '@/components/ui/primitives';
 import { ArticleCard, Avatar, PersonCard, ProgramCard } from '@/components/content/Cards';
 import { Accordion } from '@/components/ui/Accordion';
+import { SeriesCollection } from '@/components/sections/SeriesCollection';
 import { Icon } from '@/components/ui/Icon';
 
 /* ================================================================== 1. Hero slider (Ecofine "eco_slider") */
@@ -21,6 +22,14 @@ const slides = [
     cta: { label: 'Discover More', to: '/about' },
     image: images.homeHero,
   },
+    {
+    kicker: 'Paris Agreement Series',
+    title: 'The Paris Agreement Series',
+    text: 'Ten years on, what has the Agreement truly achieved? A ten-part deep dive into the operation, implementation, and future of the Paris Agreement.',
+    cta: { label: 'Explore the Series', to: '/series#paris-agreement' },
+    image: images.series,
+  }, 
+  
   {
     kicker: 'Featured research · LeGsus Digest',
     title: featured?.title ?? 'Energy as a Human Right',
@@ -34,7 +43,8 @@ const slides = [
     text: lexCommons.platformLead,
     cta: { label: 'Explore Lex Commons', to: '/lex-commons' },
     image: images.lexCommons,
-  },
+  }
+
 ];
 
 function HeroSlider() {
@@ -119,9 +129,27 @@ function HeroSlider() {
   );
 }
 
+/* ================================================================== 1b. Featured series (same pattern as the latest-publications section) */
+function FeaturedSeries() {
+  const series = getSeries('paris-agreement');
+  if (!series || !seriesIssues(series.slug).length) return null;
+  return (
+    <SeriesCollection
+      series={series}
+      eyebrow="Explore Our Series"
+      limit={5}
+      action={
+        <ButtonLink to={`/series#${series.slug}`} arrow>
+          Explore All Issues
+        </ButtonLink>
+      }
+    />
+  );
+}
+
 /* ================================================================== 2. About (Ecofine "about image" + "about us") */
 function About() {
-  const ceo = people.find((p) => p.slug === 'akinola-afolarin');
+  const ceo = currentPeople.find((p) => p.slug === 'akinola-afolarin');
   const points = ['Independent, non-profit and apolitical', 'A global network of experts across legal traditions', 'Hard and soft law as levers for real change'];
   return (
     <section className="py-20 lg:pb-[120px] lg:pt-[110px]">
@@ -221,7 +249,7 @@ function Counters() {
     { value: domains.length, suffix: '', label: 'Sustainability domains', icon: Layers },
     { value: programs.length, suffix: '', label: 'Flagship programs', icon: Scale },
     { value: articles.length, suffix: '+', label: 'Research publications', icon: BookOpenText },
-    { value: people.length, suffix: '+', label: 'Experts & researchers', icon: Users },
+    { value: currentPeople.length, suffix: '+', label: 'Experts & researchers', icon: Users },
   ];
   return (
     <div className="relative z-10 -mt-[150px] px-4 sm:px-[30px]">
@@ -426,7 +454,7 @@ function Commitment() {
 
 /* ================================================================== 9. Team (Ecofine "team two") */
 function Team() {
-  const team = people.filter((p) => p.group === 'executive').slice(0, 4);
+  const team = currentPeople.filter((p) => p.group === 'executive').slice(0, 4);
   return (
     <Section tone="grey">
       <Container>
@@ -467,6 +495,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSlider />
+      <FeaturedSeries />
       <About />
       <Programs />
       <Counters />

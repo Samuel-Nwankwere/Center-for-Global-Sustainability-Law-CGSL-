@@ -71,7 +71,7 @@ export default function LexCommonsPage() {
       </Section>
 
       <CtaBand
-        title="Put Lex Commons to work for your organisation"
+        title="Put Lex Commons to Work for Your Organisation"
         text="Our Advisory Team uses Lex Commons intelligence to de-risk operations and future-proof strategy."
         actions={
           <>

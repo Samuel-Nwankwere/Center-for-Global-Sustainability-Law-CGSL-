@@ -21,7 +21,7 @@ export default function PublicationsPage() {
   const [lead, ...rest] = articlesBySeries('digest');
   return (
     <>
-      <PageHero eyebrow="Publications" title="Research & insight" image={images.review} crumbs={[{ label: 'Publications' }]} intro={`${articles.length} articles and briefings on the law of the global sustainability transition.`} />
+      <PageHero eyebrow="Publications" title="Research & Insight" image={images.review} crumbs={[{ label: 'Publications' }]} intro={`${articles.length} articles and briefings on the law of the global sustainability transition.`} />
 
       <Section>
         <Container>

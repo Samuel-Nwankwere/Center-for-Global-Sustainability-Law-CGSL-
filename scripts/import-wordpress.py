@@ -119,7 +119,7 @@ def map_href(href):
 
 # ---------------------------------------------------------------- images
 IMAGES = {}
-def localize(src, max_w=1600, kind='img'):
+def localize(src, max_w=1600, kind='img', trim=False):
     if not src: return None
     src = src.replace('\\/', '/')
     if src.startswith('//'): src = 'https:' + src
@@ -139,6 +139,9 @@ def localize(src, max_w=1600, kind='img'):
             open(cache, 'wb').write(data)
         im = Image.open(cache)
         im = im.convert('RGBA') if im.mode in ('P', 'LA', 'RGBA') else im.convert('RGB')
+        if trim and im.mode == 'RGBA':
+            # Crop transparent margins so the logo lines up with the content edge.
+            im = im.crop(im.getchannel('A').getbbox())
         if im.width > max_w:
             im = im.resize((max_w, round(im.height * max_w / im.width)), Image.LANCZOS)
         im.save(dest, 'WEBP', quality=78, method=6)
@@ -498,7 +501,8 @@ HERO = {
 }
 hero_out = {}
 for k, v in HERO.items():
-    hero_out[k] = localize(v, max_w=1920 if k not in ('logo', 'logoLight') else 600)
+    is_logo = k in ('logo', 'logoLight')
+    hero_out[k] = localize(v, max_w=600 if is_logo else 1920, trim=is_logo)
 dump('images.json', hero_out)
 print('articles', len(articles), 'domains', len(domains), 'programs', len(programs), 'people', len(people))
 print('images', len([v for v in IMAGES.values() if v]), 'failed', [k for k, v in IMAGES.items() if not v])

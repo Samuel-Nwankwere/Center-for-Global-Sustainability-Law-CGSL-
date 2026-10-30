@@ -67,6 +67,26 @@ export interface Person {
   email: string | null;
   photo: string | null;
   bio: string[];
+  /** No longer on the team: hidden from listings, but the profile stays so author credits still link. */
+  former?: boolean;
+}
+
+/** A collection of PDF carousel publications (e.g. The Paris Agreement Series). */
+export interface PublicationSeries {
+  slug: string;
+  title: string;
+  description: string;
+  /** Issue titles keyed by issue number, taken from the publications themselves. */
+  issueTitles?: Record<number, string>;
+}
+
+export interface SeriesIssue {
+  /** Issue number; 0 is the series introduction (`intro.pdf`). */
+  number: number;
+  title: string | null;
+  pdf: string;
+  /** Pre-rendered first page (`npm run series:covers`); null until generated. */
+  cover: string | null;
 }
 
 export interface NavItem {
