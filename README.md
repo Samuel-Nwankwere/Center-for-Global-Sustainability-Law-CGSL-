@@ -76,7 +76,7 @@ scripts/series-covers.py      ← renders series covers from each PDF's first pa
 ## Common editing tasks
 
 - **Add a publication**: add an entry to `src/content/generated/articles.json` (or hook up a CMS; see below). It then appears automatically in listings, search, author pages and related-topic links.
-- **Add a team member**: add to `people.json`. A profile page at `/people/<slug>` is generated automatically.
+- **Add a team member**: add to `people.json` (photo in `public/media/`). A profile page at `/people/<slug>` is generated automatically. `"group"` is `"executive"`, `"intern"`, or `"board"` for a director who is only on the Board; `"board": true` puts someone in the Board of Directors tab.
 - **Remove a team member**: set `"former": true` in `people.json`. They leave every team listing and search, but their profile stays so their publication credits still link to it.
 - **Change navigation**: edit `mainNav` in `src/content/site.ts`.
 - **Re-theme**: edit the `--brand-*` and `--ink-*` variables in `src/styles/index.css`.

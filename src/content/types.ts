@@ -56,7 +56,8 @@ export interface Program {
   legacyUrl: string;
 }
 
-export type TeamGroup = 'executive' | 'intern';
+/** `board` is for directors who sit only on the Board (executives on the Board keep `executive` and `board: true`). */
+export type TeamGroup = 'executive' | 'board' | 'intern';
 
 export interface Person {
   slug: string;

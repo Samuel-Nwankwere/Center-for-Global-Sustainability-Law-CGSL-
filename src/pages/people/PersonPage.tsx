@@ -6,7 +6,10 @@ import { PageHero } from '@/components/ui/PageHero';
 import { Badge, ButtonA, ButtonLink, Container, Section, SectionHeading } from '@/components/ui/primitives';
 import { Widget } from '@/components/ui/Widget';
 import { ArticleRow, Avatar, PersonCard } from '@/components/content/Cards';
+import type { Person, TeamGroup } from '@/content/types';
 import NotFoundPage from '../NotFoundPage';
+
+const groupLabel: Record<TeamGroup, string> = { executive: 'Global Executive Team', board: 'Board of Directors', intern: 'Intern' };
 
 /** Ecofine "team details" layout. */
 export default function PersonPage() {
@@ -16,8 +19,9 @@ export default function PersonPage() {
   if (!person) return <NotFoundPage />;
 
   const authored = articles.filter((a) => a.authors.some((name) => personForAuthor(name)?.slug === person.slug));
-  const teamPath = person.group === 'intern' ? '/people?team=intern' : '/people';
-  const colleagues = currentPeople.filter((p) => p.group === person.group && p.slug !== person.slug).slice(0, 4);
+  const teamPath = person.group === 'executive' ? '/people' : `/people?team=${person.group}`;
+  const inTeam = (p: Person) => (person.group === 'board' ? p.board : p.group === person.group);
+  const colleagues = currentPeople.filter((p) => inTeam(p) && p.slug !== person.slug).slice(0, 4);
 
   return (
     <>
@@ -40,8 +44,8 @@ export default function PersonPage() {
           </aside>
           <div className="lg:col-span-7">
             <div className="flex flex-wrap gap-2">
-              <Badge>{person.group === 'intern' ? 'Intern' : 'Global Executive Team'}</Badge>
-              {person.board && <Badge tone="ink">Board of Directors</Badge>}
+              <Badge>{groupLabel[person.group]}</Badge>
+              {person.board && person.group !== 'board' && <Badge tone="ink">Board of Directors</Badge>}
             </div>
             <h1 className="mt-4 text-[2.25rem] font-extrabold leading-tight lg:text-[43px]">{person.name}</h1>
             <p className="mt-2 text-xl font-bold text-brand-600">{person.role}</p>
